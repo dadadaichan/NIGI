@@ -36,10 +36,10 @@ public class AttackEffect : MonoBehaviour
         }
     }
 
-    void ColliderStart()
-    {
-
-    }
+    //void OnTriggerExit2D(Collider2D otherCollider)
+    //{
+    //    Debug.Log("ƒgƒŠƒK[‚©‚ço‚½‘Šè: " + otherCollider.gameObject.name);
+    //}
 
     void AttackStart()
     {

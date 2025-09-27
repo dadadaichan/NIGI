@@ -21,7 +21,10 @@ public class EnemyScanner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (nearestObj == null)
+        {
+            lockOn.SetActive(false);
+        }
     }
 
     IEnumerator ScanEnemyTag()
@@ -47,7 +50,11 @@ public class EnemyScanner : MonoBehaviour
                 {
                     lockOn.transform.SetParent(nearestObj.transform, false);
                     lockOn.transform.localPosition = new Vector3(0, 0, 0);
+                    lockOn.transform.localScale = new Vector3(3, 3, 1);
                     preNearestObj = nearestObj;
+
+                    //dir = (nearestObj.transform.position - playerCenter.transform.position).normalized;
+                    //lockOnAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
                 }
             }
             else
@@ -63,8 +70,13 @@ public class EnemyScanner : MonoBehaviour
 
     public void AngleCal()
     {
-        dir = (nearestObj.transform.position - playerCenter.transform.position).normalized;
-        lockOnAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        if(nearestObj != null)
+        {
+            dir = (nearestObj.transform.position - playerCenter.transform.position).normalized;
+            lockOnAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        }
+        //dir = (nearestObj.transform.position - playerCenter.transform.position).normalized;
+        //lockOnAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
     }
 }
 //【目標】プレイヤーから最も近い敵をロックオンする。
