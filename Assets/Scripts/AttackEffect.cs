@@ -8,9 +8,11 @@ public class AttackEffect : MonoBehaviour
     public EnemyScanner enemyScanner;
     public float effectDistance;
     public GameObject player;
+    public PlayerGauge playerGauge;
 
     private float timer = 0f;
-    private bool isAttacking = false;
+    public bool isAttacking = false;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,6 +45,7 @@ public class AttackEffect : MonoBehaviour
 
     void AttackStart()
     {
+        playerGauge.GaugeDecrease(1);
         isAttacking = true;
         attackEffect.SetActive(true);
         attackEffect.transform.position = enemyScanner.playerCenter.transform.position + enemyScanner.dir * effectDistance;

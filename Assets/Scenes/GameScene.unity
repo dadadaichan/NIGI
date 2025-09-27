@@ -237,10 +237,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1015089570}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -648, y: 302}
-  m_SizeDelta: {x: 450, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 317, y: -238}
+  m_SizeDelta: {x: 450, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &315222216
 MonoBehaviour:
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8053784581927320926, guid: cc9c7249350f6ea4e849722b0c7b62b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc9c7249350f6ea4e849722b0c7b62b6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -292,6 +292,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26eaea3a413f484cacf072104c807e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gaugeImages:
+  - {fileID: 21300000, guid: c13105353c062174790d47000f807f67, type: 3}
+  - {fileID: 21300000, guid: 5b363b4fd1ce4fd4987ed6e660ad9252, type: 3}
+  - {fileID: 21300000, guid: 39181a9b42ab7694dbe78e3b31ed645e, type: 3}
+  - {fileID: 21300000, guid: 556bced95ea168649b3852c5ec85a38f, type: 3}
+  - {fileID: 21300000, guid: b37fa33cf1f23d049aebcd493f14607d, type: 3}
+  - {fileID: 21300000, guid: 3695bf2c66b919543ab3587a12127d2b, type: 3}
+  - {fileID: 21300000, guid: b62141ed27df15a4384616330417d1a7, type: 3}
+  - {fileID: 21300000, guid: 795fd5fa595e0664f8341527b86be481, type: 3}
+  - {fileID: 21300000, guid: cc9c7249350f6ea4e849722b0c7b62b6, type: 3}
+  playerGauge: {fileID: 2048489867}
+  gauge: {fileID: 315222216}
 --- !u!1 &318223212
 GameObject:
   m_ObjectHideFlags: 0
@@ -3033,7 +3045,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2048489861}
@@ -3082,7 +3094,7 @@ SpriteRenderer:
   m_SortingLayerID: -1936735517
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 5193370376063446613, guid: 3b5a90e55862628418dc0032bf1d870c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5485,7 +5497,7 @@ Transform:
   m_GameObject: {fileID: 956442539}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: -4, z: 0}
+  m_LocalPosition: {x: 4, y: 0.5, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5722,6 +5734,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1137321939}
   - component: {fileID: 1137321938}
+  - component: {fileID: 1137321941}
   - component: {fileID: 1137321940}
   m_Layer: 0
   m_Name: Hero
@@ -5774,7 +5787,7 @@ SpriteRenderer:
   m_SortingLayerID: -1936735517
   m_SortingLayer: -2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0f39a9205e4394ee1b6ba8269428d176, type: 3}
+  m_Sprite: {fileID: 8453630528165894229, guid: fb56724f728f1db4aa60149f46791eec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5795,12 +5808,24 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2048489861}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1137321940
+--- !u!114 &1137321940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137321937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdab786f623b09243a13fadaae78c4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1137321941
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -5810,7 +5835,7 @@ Animator:
   m_GameObject: {fileID: 1137321937}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0ab8dbeafdc8ae64a94a6547ad5d26d4, type: 2}
+  m_Controller: {fileID: 9100000, guid: a48ae46d862ca9d44b3cacfe5b8f7384, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5895,9 +5920,9 @@ RectTransform:
   - {fileID: 400050480}
   m_Father: {fileID: 1015089570}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 960, y: -540}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1371754349
@@ -6465,7 +6490,7 @@ Transform:
   m_GameObject: {fileID: 1858812234}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: -1, z: 0}
+  m_LocalPosition: {x: -1, y: -1.5, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6765,7 +6790,7 @@ Transform:
   m_GameObject: {fileID: 2048489859}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5, y: -4.4226665, z: 0}
+  m_LocalPosition: {x: -5.5, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -6790,7 +6815,7 @@ MonoBehaviour:
   ms: 0.2
   angle: 30
   turnSpeed: 90
-  speedUpValue: 1.5
+  speedUpValue: 0
   speedDownValue: 0.03
 --- !u!65 &2048489863
 BoxCollider:
@@ -6849,6 +6874,8 @@ MonoBehaviour:
   enemyScanner: {fileID: 2048489864}
   effectDistance: 1
   player: {fileID: 2048489859}
+  playerGauge: {fileID: 2048489867}
+  isAttacking: 0
 --- !u!114 &2048489866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6875,6 +6902,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b0aed9924280c4fa8a51878972474f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxGauge: 8
+  currentGauge: 0
+  attackEffect: {fileID: 2048489865}
+  gaugeHealSpeed: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

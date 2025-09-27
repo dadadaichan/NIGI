@@ -28,7 +28,7 @@ public class Attack : MonoBehaviour
             }
         }
 
-        // 相手を削除（敵だけを対象にするならタグチェックすると安全）
+        // 相手を削除
         if (other.CompareTag("Enemy"))
         {
             Destroy(other.gameObject);
