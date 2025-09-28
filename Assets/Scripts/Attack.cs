@@ -17,8 +17,6 @@ public class Attack : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("出た: " + other.gameObject.name);
-
         if (enemyScanner.nearestObj != null) // nullチェック
         {
             Transform lockOnChild = enemyScanner.nearestObj.transform.Find("LockOn");
@@ -31,6 +29,7 @@ public class Attack : MonoBehaviour
         // 相手を削除
         if (other.CompareTag("Enemy"))
         {
+            Debug.Log("撃破: " + other.gameObject.name);
             Destroy(other.gameObject);
         }
     }

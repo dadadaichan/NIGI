@@ -9,6 +9,7 @@ public class AttackEffect : MonoBehaviour
     public float effectDistance;
     public GameObject player;
     public PlayerGauge playerGauge;
+    
 
     private float timer = 0f;
     public bool isAttacking = false;
@@ -25,7 +26,14 @@ public class AttackEffect : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            AttackStart();
+            if(playerGauge.currentGauge != 0)
+            {
+                AttackStart();
+            }
+            else
+            {
+
+            }
         }
 
         if (isAttacking)

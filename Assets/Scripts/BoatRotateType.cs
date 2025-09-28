@@ -14,16 +14,23 @@ public class BoatRotateType : MonoBehaviour
     private float endRT;
     private bool isSpeedUp = false;
 
+    Rigidbody2D rb;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        rb = this.gameObject.GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+    private void FixedUpdate()
+    {
+        Vector2 forward = transform.up;
+        rb.MovePosition(rb.position + forward * moveSpeed * Time.fixedDeltaTime);
+        //↑オブジェクトを「現在位置から相対的に」動かす
+    }
     void Update()
     {
-        this.gameObject.transform.Translate(Vector2.up * moveSpeed * Time.deltaTime, Space.Self);//オブジェクトを「現在位置から相対的に」動かす関数
+        //this.gameObject.transform.Translate(Vector2.up * moveSpeed * Time.deltaTime, Space.Self);//オブジェクトを「現在位置から相対的に」動かす関数
         
         if (Input.GetKeyDown(KeyCode.D))
         {
