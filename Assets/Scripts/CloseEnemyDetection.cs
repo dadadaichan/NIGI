@@ -14,24 +14,24 @@ public class CloseEnemyDetection : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        //Debug.Log("“G‚ª”ÍˆÍ“à‚ÉN“ü");
-        if (other.CompareTag("LongRangeEnemy"))
-        other.tag = "CloseRangeEnemy";
-    }
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    //Debug.Log("“G‚ª”ÍˆÍ“à‚ÉN“ü");
+    //    if (other.CompareTag("LongRangeEnemy"))
+    //    other.tag = "CloseRangeEnemy";
+    //}
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        //Debug.Log("ƒgƒŠƒK[ŒŸ’m");
-        if (other.CompareTag("LongRangeEnemy")) other.tag = "CloseRangeEnemy";
+    //private void OnTriggerStay2D(Collider2D other)
+    //{
+    //    //Debug.Log("ƒgƒŠƒK[ŒŸ’m");
+    //    if (other.CompareTag("LongRangeEnemy")) other.tag = "CloseRangeEnemy";
 
-    }
+    //}
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        //Debug.Log("“G‚ª”ÍˆÍŠO‚É“¦–S");
-        if (other.CompareTag("CloseRangeEnemy"))
-            other.tag = "LongRangeEnemy";
-    }
+    //private void OnTriggerExit2D(Collider2D other)
+    //{
+    //    //Debug.Log("“G‚ª”ÍˆÍŠO‚É“¦–S");
+    //    if (other.CompareTag("CloseRangeEnemy"))
+    //        other.tag = "LongRangeEnemy";
+    //}
 }

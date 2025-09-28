@@ -13,7 +13,7 @@ public class BoatRotateType : MonoBehaviour
 
     private bool isTurning = false;
     private float endRT;
-    private bool isSpeedUp = false;
+    //private bool isSpeedUp = false;
 
     Rigidbody2D rb;
 
