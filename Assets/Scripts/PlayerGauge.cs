@@ -8,7 +8,11 @@ public class PlayerGauge : MonoBehaviour
     public AttackEffect attackEffect;
     public GameObject attackEffectG;
     public int gaugeHealValue;
+    public float startGaugeHealTime;
     public float gaugeHealTime;
+    public float zeroGaugeHealTime;
+    public bool isZeroGauge = false;
+    public BoatRotateType rotateType;
 
     public float elapsedTime;
     
@@ -16,6 +20,7 @@ public class PlayerGauge : MonoBehaviour
     void Start()
     {
         currentGauge = maxGauge;
+        gaugeHealTime = startGaugeHealTime;
     }
 
     // Update is called once per frame
@@ -23,7 +28,7 @@ public class PlayerGauge : MonoBehaviour
     {
         elapsedTime += Time.deltaTime;//ƒQ[ƒWŒ¸­ƒAƒNƒVƒ‡ƒ“‚ªÅŒã‚És‚í‚ê‚Ä‚©‚ç‚ÌŒo‰ß•b”
 
-        if (attackEffect.isAttacking)//UŒ‚‚µ‚½‚çA•b”‰Šú‰»
+        if (attackEffect.isAttacking && !isZeroGauge)//UŒ‚‚µ‚½‚çA•b”‰Šú‰»
         {
             elapsedTime = 0;
         }
@@ -35,18 +40,26 @@ public class PlayerGauge : MonoBehaviour
             elapsedTime = 0;
         }
 
-        if(currentGauge == 0)
+        if(isZeroGauge)
         {
-
+            gaugeHealTime = zeroGaugeHealTime;
+            if(currentGauge == maxGauge)//‘S‰ñ•œ‚µ‚½‚ç
+            {
+                isZeroGauge = false;
+                gaugeHealTime = startGaugeHealTime;
+                rotateType.moveSpeed = rotateType.ms;
+            }
         }
     }
 
     public void GaugeDecrease(int gaugeDecrease)
     {
         currentGauge -= gaugeDecrease;
-        if (currentGauge < 0)
+        if (currentGauge <= 0)
         {
             currentGauge = 0;
+            rotateType.moveSpeed = rotateType.gaugeDownSlow;
+            isZeroGauge = true;
         }
     }
 }

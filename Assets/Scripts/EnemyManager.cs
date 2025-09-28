@@ -10,7 +10,8 @@ public class EnemyManager : MonoBehaviour
         private set;
     }
 
-    public List<GameObject> enemies = new List<GameObject>();
+    public List<GameObject> longRangeEnemies = new List<GameObject>();
+    public List<GameObject> closeRangeEnemies = new List<GameObject>();
 
     private void Awake()
     {
@@ -27,15 +28,48 @@ public class EnemyManager : MonoBehaviour
     }
     public void RegisterEnemy(GameObject enemy)
     {
-        if (!enemies.Contains(enemy))
+        //if (!longRangeEnemies.Contains(enemy)  || !closeRangeEnemies.Contains(enemy))
+        //{
+        //    if (enemy.CompareTag("LongRangeEnemy"))
+        //    {
+        //        longRangeEnemies.Add(enemy);
+        //    }
+        //    else if(enemy.CompareTag("CloseRangeEnemy"))
+        //    {
+        //        closeRangeEnemies.Add(enemy);
+        //    }
+        //}
+
+        if (!longRangeEnemies.Contains(enemy) && enemy.CompareTag("LongRangeEnemy"))
         {
-            enemies.Add(enemy);
-            //Debug.Log(enemy + "‚ğEnemyList‚É“o˜^‚µ‚Ü‚µ‚½B");
+            longRangeEnemies.Add(enemy);
+            closeRangeEnemies.Remove(enemy);
         }
+
+        if (!closeRangeEnemies.Contains(enemy) && enemy.CompareTag("CloseRangeEnemy"))
+        {
+            closeRangeEnemies.Add(enemy);
+            longRangeEnemies.Remove(enemy);
+        }
+
+        //Debug.Log("‹ß‹——£“G”:" + closeRangeEnemies.Count);
+        //Debug.Log("‰“‹——£“G”:" + longRangeEnemies.Count);
     }
 
     public void UnregisterEnemy(GameObject enemy)
     {
-        if (enemies.Contains(enemy)) enemies.Remove(enemy);
+        if (longRangeEnemies.Contains(enemy) || closeRangeEnemies.Contains(enemy))
+        {
+            if (enemy.CompareTag("LongRangeEnemy"))
+            {
+                longRangeEnemies.Remove(enemy);
+            }
+            else if (enemy.CompareTag("CloseRangeEnemy"))
+            {
+                closeRangeEnemies.Remove(enemy);
+            }
+            //Debug.Log(enemy + "‚ğEnemyList‚É“o˜^‚µ‚Ü‚µ‚½B");
+        }
+        //if (longRangeEnemies.Contains(enemy)) longRangeEnemies.Remove(enemy);
     }
 }

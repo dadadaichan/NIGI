@@ -1,28 +1,10 @@
 fileFormatVersion: 2
-guid: 3742536a2debbb7459f0ad6fe9247bcb
+guid: 31f34f5ea935c17478c43cc39c145dff
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1020468522976622029
-    second: bow 1_0
-  - first:
-      213: -5937929251012134169
-    second: bow 1_1
-  - first:
-      213: -1708918863374353987
-    second: bow 1_2
-  - first:
-      213: 3187823105681143285
-    second: bow 1_3
-  - first:
-      213: 7359590315706286758
-    second: bow 1_4
-  - first:
-      213: -3038671838599690666
-    second: bow 1_5
-  - first:
-      213: -7348302625495188794
-    second: bow 1_6
+      213: -8864645360043674332
+    second: ax_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -157,79 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bow 1_0
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 64
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dc53d7807be692e00800000000000000
-      internalID: 1020468522976622029
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bow 1_1
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 59
-        width: 27
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7ea35048ecc389da0800000000000000
-      internalID: -5937929251012134169
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bow 1_2
-      rect:
-        serializedVersion: 2
-        x: 59
-        y: 64
-        width: 7
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: db97b961953b848e0800000000000000
-      internalID: -1708918863374353987
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bow 1_3
+      name: ax_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 24
+        y: 0
         width: 80
-        height: 37
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,74 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f538ec893c6d3c20800000000000000
-      internalID: 3187823105681143285
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bow 1_4
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 4
-        width: 27
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6a2041c3664822660800000000000000
-      internalID: 7359590315706286758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bow 1_5
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 14
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6564847ff0874d5d0800000000000000
-      internalID: -3038671838599690666
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bow 1_6
-      rect:
-        serializedVersion: 2
-        x: 59
-        y: 9
-        width: 7
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6caf941f1b5950a90800000000000000
-      internalID: -7348302625495188794
+      spriteID: 42538ce03047af480800000000000000
+      internalID: -8864645360043674332
       vertices: []
       indices: 
       edges: []
@@ -324,13 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bow 1_0: 1020468522976622029
-      bow 1_1: -5937929251012134169
-      bow 1_2: -1708918863374353987
-      bow 1_3: 3187823105681143285
-      bow 1_4: 7359590315706286758
-      bow 1_5: -3038671838599690666
-      bow 1_6: -7348302625495188794
+      ax_0: -8864645360043674332
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -26,7 +26,7 @@ public class AttackEffect : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(playerGauge.currentGauge != 0)
+            if (!playerGauge.isZeroGauge)
             {
                 AttackStart();
             }
@@ -56,7 +56,7 @@ public class AttackEffect : MonoBehaviour
         playerGauge.GaugeDecrease(1);
         isAttacking = true;
         attackEffect.SetActive(true);
-        attackEffect.transform.position = enemyScanner.playerCenter.transform.position + enemyScanner.dir * effectDistance;
+        attackEffect.transform.position = enemyScanner.closestPlayerCenter.transform.position + enemyScanner.dir * effectDistance;
         attackEffect.transform.rotation = Quaternion.Euler(0,0, enemyScanner.lockOnAngle);//ƒƒbƒNƒIƒ“•ûŒü‚ğ“ü—Í
         animator.SetTrigger("AttackEffect");
         timer = attackDuration;

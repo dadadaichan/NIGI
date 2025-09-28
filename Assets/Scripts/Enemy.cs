@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    void OnEnable()
+    void Update()
     {
         if (EnemyManager.Instance != null)
         {
@@ -10,6 +10,14 @@ public class Enemy : MonoBehaviour
             //Debug.Log(gameObject + "をリストに追加するため、RegisterEnemyにアクセスします。");
         }
     }
+
+    //void ReRegister()
+    //{
+    //    if (EnemyManager.Instance != null)
+    //    {
+    //        if()
+    //    }
+    //}
 
     void OnDisable()
     {

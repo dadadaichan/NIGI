@@ -9,6 +9,7 @@ public class BoatRotateType : MonoBehaviour
     public float turnSpeed = 90;
     public float speedUpValue = 1.5f;
     public float speedDownValue = 0.02f;
+    public float gaugeDownSlow;
 
     private bool isTurning = false;
     private float endRT;
@@ -39,8 +40,8 @@ public class BoatRotateType : MonoBehaviour
                 isTurning = true;
                 endRT = this.transform.eulerAngles.z - angle;
             }
-            isSpeedUp = true;
-            moveSpeed = speedUpValue;
+            //isSpeedUp = true;
+            //moveSpeed = speedUpValue;
         }
 
         if (Input.GetKeyDown(KeyCode.A))
@@ -50,8 +51,8 @@ public class BoatRotateType : MonoBehaviour
                 isTurning = true;
                 endRT = this.transform.eulerAngles.z + angle;
             }
-            isSpeedUp = true;
-            moveSpeed = speedUpValue;
+            //isSpeedUp = true;
+            //moveSpeed = speedUpValue;
         }
 
         if (isTurning)
@@ -66,15 +67,15 @@ public class BoatRotateType : MonoBehaviour
             }
         }
 
-        if (isSpeedUp)
-        {
-            moveSpeed -= speedDownValue;
-            if(moveSpeed <= ms)
-            {
-                moveSpeed = ms;
-                isSpeedUp = false;
-            }
-        }
+        //if (isSpeedUp)
+        //{
+        //    //moveSpeed -= speedDownValue;
+        //    if(moveSpeed <= ms)
+        //    {
+        //        moveSpeed = ms;
+        //        //isSpeedUp = false;
+        //    }
+        //}
     }
 }
 
