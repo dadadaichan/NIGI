@@ -21,7 +21,16 @@ public class Enemy : MonoBehaviour
 
     void OnDisable()
     {
-        EnemyManager.Instance.UnregisterEnemy(this.gameObject);
+        EnemyScanner scanner = FindFirstObjectByType<EnemyScanner>();
+        if (scanner != null && scanner.closeLockOn != null)
+        {
+            scanner.closeLockOn.transform.SetParent(null); // “G‚ªÁ‚¦‚é‘O‚ÉŠO‚·
+        }
+
+        if (EnemyManager.Instance != null)
+        {
+            EnemyManager.Instance.UnregisterEnemy(gameObject);
+        }
     }
 
     public void die()

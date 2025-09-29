@@ -13,6 +13,7 @@ public class PlayerGauge : MonoBehaviour
     public float zeroGaugeHealTime;
     public bool isZeroGauge = false;
     public BoatRotateType rotateType;
+    public ArrowRange arrowRange;
 
     public float elapsedTime;
     
@@ -28,8 +29,9 @@ public class PlayerGauge : MonoBehaviour
     {
         elapsedTime += Time.deltaTime;//ゲージ減少アクションが最後に行われてからの経過秒数
 
-        if (attackEffect.isAttacking && !isZeroGauge)//攻撃したら、秒数初期化
+        if (!isZeroGauge)//攻撃したら、秒数初期化
         {
+            if(attackEffect.isAttacking || arrowRange.isArrowFire)
             elapsedTime = 0;
         }
 

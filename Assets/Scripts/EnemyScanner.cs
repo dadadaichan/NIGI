@@ -51,41 +51,41 @@ public class EnemyScanner : MonoBehaviour
     {
         while (true)
         {
-            //近距離ロックオン
-            float preDistancePlayerToEnemy = float.MaxValue;//最初に距離の最大入れとくことで一回目にどんな値が来ても最も短い距離と判定するため
+            float preDistancePlayerToEnemy = float.MaxValue;
+            GameObject candidate = null;
 
             foreach (GameObject o in EnemyManager.Instance.closeRangeEnemies)
             {
-                float distancePlayerToEnemy = Vector3.Distance(this.gameObject.transform.position, o.transform.position);
-                if (distancePlayerToEnemy < preDistancePlayerToEnemy)
+                if (o == null || o.Equals(null)) continue; // Destroyされた敵は無視
+
+                float distance = Vector3.Distance(transform.position, o.transform.position);
+                if (distance < preDistancePlayerToEnemy)
                 {
-                    closestObj = o;
-                    preDistancePlayerToEnemy = distancePlayerToEnemy;
+                    candidate = o;
+                    preDistancePlayerToEnemy = distance;
                 }
             }
+
+            closestObj = candidate;
+
             if (closestObj != null && closestObj.CompareTag("CloseRangeEnemy"))
             {
-                closeLockOn.SetActive(true);
-                if (closestObj != preClosestObj)
+                if (closeLockOn != null && !closeLockOn.Equals(null))
                 {
-                    closeLockOn.transform.SetParent(closestObj.transform, true);
-                    closeLockOn.transform.localScale = new Vector3(closeLockOnScale, closeLockOnScale, 1);
-                    closeLockOn.transform.SetParent(closestObj.transform, false);
-                    closeLockOn.transform.localPosition = new Vector3(0, 0, 0);
-                    //closeLockOn.transform.localScale = new Vector3(3, 3, 1);
-                    preClosestObj = closestObj;
+                    closeLockOn.SetActive(true);
+                    if (closestObj != preClosestObj)
+                    {
+                        closeLockOn.transform.SetParent(closestObj.transform, true);
+                        closeLockOn.transform.localScale = new Vector3(closeLockOnScale, closeLockOnScale, 1);
+                        closeLockOn.transform.localPosition = Vector3.zero;
 
-                    //dir = (nearestObj.transform.position - playerCenter.transform.position).normalized;
-                    //lockOnAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                        preClosestObj = closestObj;
+                    }
                 }
             }
-            //else
-            //{
-            //    closeLockOn.SetActive(false);
-            //    closestObj = null;
-            //}
-            else if (closestObj == null || closestObj.Equals(null))
+            else
             {
+                // 敵がいない or DestroyされたらLockOn非表示
                 if (closeLockOn != null && !closeLockOn.Equals(null))
                 {
                     closeLockOn.SetActive(false);
@@ -93,66 +93,16 @@ public class EnemyScanner : MonoBehaviour
                 closestObj = null;
             }
 
-            if (closestObj != null)
+            if (closestObj != null && !closestObj.Equals(null))
             {
                 dir = (closestObj.transform.position - closestPlayerCenter.transform.position).normalized;
                 closeLockOnAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             }
 
-
-            //遠距離ロックオン
-            //float preDistancePlayerToEnemyLong = float.MaxValue;//最初に距離の最大入れとくことで一回目にどんな値が来ても最も短い距離と判定するため
-
-            //foreach (GameObject o in EnemyManager.Instance.longRangeEnemies)
-            //{
-            //    float distancePlayerToEnemyLong = Vector3.Distance(this.gameObject.transform.position, o.transform.position);
-            //    if (distancePlayerToEnemyLong < preDistancePlayerToEnemyLong)
-            //    {
-            //        longClosestObj = o;
-            //        preDistancePlayerToEnemyLong = distancePlayerToEnemyLong;
-            //    }
-            //}
-
-            //if (longClosestObj != null && longClosestObj.CompareTag("LongRangeEnemy"))
-            //{
-            //    longLockOn.SetActive(true);
-            //    if(longClosestObj != preLongClosestObj)
-            //    {
-            //        longLockOn.transform.SetParent(longClosestObj.transform, true);
-            //        longLockOn.transform.localScale = new Vector3(longLockOnScale, longLockOnScale, 1);
-            //        longLockOn.transform.SetParent(longClosestObj.transform, false);
-            //        longLockOn.transform.localPosition = new Vector3(0, 0, 0);
-            //        //longLockOn.transform.localScale = new Vector3(7, 7, 1);
-            //        preLongClosestObj = longClosestObj;
-
-            //        //dir = (nearestObj.transform.position - playerCenter.transform.position).normalized;
-            //        //lockOnAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            //    }
-            //}
-            ////else
-            ////{
-            ////    longLockOn.SetActive(false);
-            ////    longClosestObj = null;
-            ////}
-            //else if(longClosestObj == null || longClosestObj.Equals(null))
-            //{
-            //    if (longLockOn != null && !longLockOn.Equals(null))
-            //    {
-            //        longLockOn.SetActive(false);
-            //    }
-            //    longClosestObj = null;
-            //}
-
-            //if (longClosestObj != null)
-            //{
-            //    dirLong = (longClosestObj.transform.position - longClosestPlayerCenter.transform.position).normalized;
-            //    longLockOnAngle = Mathf.Atan2(dirLong.y, dirLong.x) * Mathf.Rad2Deg;
-            //}
-
-
             yield return new WaitForSeconds(lockOnInterval);
         }
     }
+
 
     //public void AngleCal()
     //{
