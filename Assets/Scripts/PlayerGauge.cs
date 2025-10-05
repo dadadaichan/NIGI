@@ -5,7 +5,7 @@ public class PlayerGauge : MonoBehaviour
 {
     public int maxGauge = 8;
     public int currentGauge;
-    public AttackEffect attackEffect;
+    public Attack attack;
     public GameObject attackEffectG;
     public int gaugeHealValue;
     public float startGaugeHealTime;
@@ -31,7 +31,7 @@ public class PlayerGauge : MonoBehaviour
 
         if (!isZeroGauge)//UŒ‚‚µ‚½‚çA•b”‰Šú‰»
         {
-            if(attackEffect.isAttacking || arrowRange.isArrowFire)
+            if(attack.isAttacking || arrowRange.isArrowFire)
             elapsedTime = 0;
         }
 

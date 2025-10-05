@@ -15,6 +15,7 @@ public class ArrowRange : MonoBehaviour
     // 生成したロックオンオブジェクトを管理するリスト
     private List<GameObject> activeLockOns = new List<GameObject>();
 
+
     private Vector3 baseScale;
 
     void Start()
@@ -46,7 +47,7 @@ public class ArrowRange : MonoBehaviour
             {
                 ArrowLoad();
             }
-            
+
         }
 
         if (Input.GetKeyUp(KeyCode.S))
@@ -75,6 +76,7 @@ public class ArrowRange : MonoBehaviour
             if (!playerGauge.isZeroGauge)
             {
                 ArrowFire();
+                targets.Clear();
             }
         }
     }
@@ -82,7 +84,7 @@ public class ArrowRange : MonoBehaviour
     private void ArrowLoad()
     {
         col.enabled = true;
-        transform.localScale += new Vector3(area, area, 0); // += にすると毎フレーム拡大し続けるので修正
+        transform.localScale += new Vector3(area, area, 0); //
 
         // まだロックオンマーカーが付いていない敵にだけ生成
         foreach (GameObject arrowTarget in new List<GameObject>(targets)) // コピーしてforeach
@@ -146,12 +148,5 @@ public class ArrowRange : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (targets.Contains(other.gameObject))
-        {
-            targets.Remove(other.gameObject);
-            Debug.Log("敵を削除: " + other.name);
-        }
-    }
+
 }
