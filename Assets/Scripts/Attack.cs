@@ -60,6 +60,7 @@ public class Attack : MonoBehaviour
     void AttackStart()
     {
         isAttacking = true;
+        AXAnim.SetTrigger("AXAttack");
         playerGauge.GaugeDecrease(1);
         attackEffect.SetActive(true);
         attackEffect.transform.position = enemyScanner.closestPlayerCenter.transform.position + enemyScanner.dir * effectDistance;

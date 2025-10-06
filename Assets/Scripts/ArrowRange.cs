@@ -11,6 +11,7 @@ public class ArrowRange : MonoBehaviour
     public PlayerGauge playerGauge;
     public int arrowGaugeDecrease;
     public bool isArrowFire = false;
+    public EnemyScanner enemyScanner;
 
     // 生成したロックオンオブジェクトを管理するリスト
     private List<GameObject> activeLockOns = new List<GameObject>();
@@ -116,6 +117,14 @@ public class ArrowRange : MonoBehaviour
         {
             if (arrowTarget != null)
             {
+                if (enemyScanner.closestObj != null) // nullチェック
+                {
+                    Transform lockOnChild = enemyScanner.closestObj.transform.Find("LockOn");
+                    if (lockOnChild != null)
+                    {
+                        lockOnChild.SetParent(null);
+                    }
+                }
                 Destroy(arrowTarget);
             }
         }
