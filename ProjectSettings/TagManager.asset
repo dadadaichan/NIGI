@@ -41,16 +41,16 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: ground
+  - name: Ground
     uniqueID: 625993047
     locked: 0
-  - name: tree
+  - name: Object
     uniqueID: 951042099
     locked: 0
-  - name: character
+  - name: Character
     uniqueID: 2358231779
     locked: 0
-  - name: ui
+  - name: UI
     uniqueID: 3208780481
     locked: 0
   - name: Default
