@@ -55,7 +55,7 @@ public class EnemyAttack : MonoBehaviour
         if (count > interval)
         {
             Anim.SetTrigger("enemyAttack");
-            DirCalculation();
+            //DirCalculation();
             child.SetActive(true);
             playerHP.TakeDamage(1);
             count = 0;
@@ -66,11 +66,11 @@ public class EnemyAttack : MonoBehaviour
         //}
     }
 
-    private void DirCalculation()
-    {
-        dir = (this.gameObject.transform.position - player.transform.position).normalized;//方向ベクトル求めれた？
-        angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        child.transform.rotation = Quaternion.Euler(0, 0, angle);
-        child.transform.position = this.transform.position - dir*atDis;
-    }
+    //private void DirCalculation()
+    //{
+    //    dir = (this.gameObject.transform.position - player.transform.position).normalized;//方向ベクトル求めれた？
+    //    angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+    //    child.transform.rotation = Quaternion.Euler(0, 0, angle);
+    //    child.transform.position = this.transform.position - dir*atDis;
+    //}
 }

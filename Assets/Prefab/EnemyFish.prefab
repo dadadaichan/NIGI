@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6257270036538216367}
   - component: {fileID: 3009775531309278318}
   - component: {fileID: 4321327430271697858}
+  - component: {fileID: 6908193794503436237}
   m_Layer: 7
   m_Name: EnemyFish
   m_TagString: CloseRangeEnemy
@@ -278,6 +279,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6908193794503436237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485681234040745924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53958fb11c0e85746b248e5f8f7cd92e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 2120405985114267701}
 --- !u!1 &2120405985114267701
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,8 +303,9 @@ GameObject:
   - component: {fileID: 3901360094200903689}
   - component: {fileID: 3401198887651817733}
   - component: {fileID: 2383260776919438807}
+  - component: {fileID: 5611927131829001689}
   m_Layer: 0
-  m_Name: AttackAreaCollider
+  m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,13 +319,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120405985114267701}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.19080894, w: 0.9816273}
+  m_LocalPosition: {x: 0.3, y: -0.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1607526729330815630}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 22}
 --- !u!70 &3401198887651817733
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -389,10 +404,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1936735517
+  m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4333121670085401395, guid: 045f50dce7f66124a8d0b2dd95b675c9, type: 3}
+  m_Sprite: {fileID: 552386406559687750, guid: 021e847ec835713428cae19e604c4e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -403,6 +418,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5611927131829001689
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120405985114267701}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c56f432662a19aa45a4fffd180d2b13e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4689239195351519469
 GameObject:
   m_ObjectHideFlags: 0

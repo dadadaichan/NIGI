@@ -4,6 +4,7 @@ using UnityEngine;
 public class ArrowRange : MonoBehaviour
 {
     public CapsuleCollider2D col;
+    public KillCounter killCounter;
     public float area;
     public int maxTargets = 5;
     public List<GameObject> targets = new List<GameObject>();
@@ -125,6 +126,7 @@ public class ArrowRange : MonoBehaviour
                         lockOnChild.SetParent(null);
                     }
                 }
+                killCounter.KillCount();
                 Destroy(arrowTarget);
             }
         }

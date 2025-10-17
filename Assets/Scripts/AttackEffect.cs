@@ -3,6 +3,7 @@ using UnityEngine;
 public class AttackEffect : MonoBehaviour
 {
     public EnemyScanner enemyScanner;
+    public KillCounter killCounter;
     
     void Start()
     {
@@ -26,7 +27,7 @@ public class AttackEffect : MonoBehaviour
         // ‘Šè‚ğíœ
         if (other.CompareTag("CloseRangeEnemy"))
         {
-            Debug.Log("Œ‚”j: " + other.gameObject.name);
+            killCounter.KillCount();
             Destroy(other.gameObject);
         }
     }
