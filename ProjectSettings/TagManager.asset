@@ -1,3 +1,65 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:19bca06f946ef5841627b7095778a06035fbd287d7d05967cf092258dc1241bd
-size 699
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - CloseRangeEnemy
+  - LongRangeEnemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 360535273
+    locked: 0
+  - name: Water
+    uniqueID: 3572596567
+    locked: 0
+  - name: Object
+    uniqueID: 1669547591
+    locked: 0
+  - name: Character
+    uniqueID: 2705372519
+    locked: 0
+  - name: Weapon
+    uniqueID: 2181738071
+    locked: 0
+  - name: UI
+    uniqueID: 3166846129
+    locked: 0
+  m_RenderingLayers:
+  - Default

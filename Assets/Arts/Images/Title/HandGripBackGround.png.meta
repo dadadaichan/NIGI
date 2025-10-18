@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HandGripBackGround_0: 6528493277279747033
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -85,7 +85,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1936735517
-  m_SortingLayer: -2
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -6447080810540591184, guid: e8539ad6fb12498448ffd386193b7985, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -207,10 +207,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   NeighborLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
 --- !u!114 &6257270036538216367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,7 +405,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1936735517
-  m_SortingLayer: -2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 552386406559687750, guid: 021e847ec835713428cae19e604c4e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
