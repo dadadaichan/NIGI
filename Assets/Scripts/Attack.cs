@@ -11,6 +11,7 @@ public class Attack : MonoBehaviour
     public float effectDistance;
     public GameObject player;
     public PlayerGauge playerGauge;
+    public float rot;
     private bool isAXReady = false;
 
     private float timer = 0f;
@@ -64,7 +65,7 @@ public class Attack : MonoBehaviour
         playerGauge.GaugeDecrease(1);
         attackEffect.SetActive(true);
         attackEffect.transform.position = enemyScanner.closestPlayerCenter.transform.position + enemyScanner.dir * effectDistance;
-        attackEffect.transform.rotation = Quaternion.Euler(0, 0, enemyScanner.closeLockOnAngle);//ロックオン方向を入力
+        attackEffect.transform.rotation = Quaternion.Euler(0, 0, enemyScanner.closeLockOnAngle + rot);//ロックオン方向を入力
         animator.SetTrigger("AttackEffect");
         timer = attackDuration;
     }
